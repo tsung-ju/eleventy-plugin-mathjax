@@ -21,7 +21,7 @@ const defaultOptions = {
   svg: {
     fontCache: "global",
   },
-  adaptor: {},
+  liteAdaptor: {},
 };
 
 module.exports = function (eleventyConfig, options) {
@@ -31,14 +31,14 @@ module.exports = function (eleventyConfig, options) {
     tex: { ...defaultOptions.tex, ...options.tex },
     svg: { ...defaultOptions.svg, ...options.svg },
     chtml: { ...defaultOptions.chtml, ...options.chtml },
-    adaptor: { ...defaultOptions.adaptor, ...options.adaptor },
+    liteAdaptor: { ...defaultOptions.liteAdaptor, ...options.liteAdaptor },
   };
 
   const InputJax = new TeX(options.tex);
 
   const OutputJax = createOutputJax(options);
 
-  const adaptor = liteAdaptor(options.adaptor);
+  const adaptor = liteAdaptor(options.liteAdaptor);
   AssistiveMmlHandler(RegisterHTMLHandler(adaptor));
 
   eleventyConfig.addTransform("mathjax", function (content, outputPath) {

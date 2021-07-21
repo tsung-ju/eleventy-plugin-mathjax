@@ -98,7 +98,7 @@ Options for MathJaX's CommonHTML output processor. Defaults to `{}`.
 
 See [here](https://docs.mathjax.org/en/latest/options/output/chtml.html) for full options.
 
-#### adaptor
+#### liteAdaptor
 
 Options for MathJaX's lite DOM adaptor. Useful for passing size hints to MathJaX, e.g. `{ fontSize: 18 }`. Defaults to `{}`.
 
