@@ -16,9 +16,33 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
-### Options
+## Usage
 
-Optionally pass in an options object as the second argument to addPlugin to further customize this plugin pack.
+This plugin uses `$...$` and `\(...\)` for inline equations,
+`$$...$$` and `\[...\]` for block equations,
+and `\$` for escaping the dollar sign.
+
+#### Caveat
+
+In Markdown files, `\(`, `\[` and `\$` needs to be written as `\\\(`, `\\\[` and `\\$` respectively. This is due to that the plugin operates on the generated HTML, not directly on the source file.
+
+### Example
+
+```md
+This is a $\TeX$ example.
+$$ 1 + 1 = 2 $$
+
+Equivalent to:
+
+This is a \\\( \TeX \\\) example.
+\\\[ 1 + 1 = 2 \\\]
+
+This is a dollar sign \\$.
+```
+
+## Options
+
+Optionally pass in an options object as the second argument to addPlugin to further customize this plugin.
 
 For example, to use the CommonHTML output format instead of SVG:
 
