@@ -12,7 +12,10 @@
   },
   "keywords": [
     "eleventy",
-    "eleventy-plugin"
+    "eleventy-plugin",
+    "mathjax",
+    "latex",
+    "math"
   ],
   "author": "Tsung-Ju Chiang",
   "license": "Apache-2.0",
