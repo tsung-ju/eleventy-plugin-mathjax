@@ -42,7 +42,7 @@ Options for MathJaX's TeX input processor.
 
 Defaults to:
 
-```
+```js
 {
   packages: /* all packages */,
   inlineMath: [
