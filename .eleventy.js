@@ -49,9 +49,7 @@ module.exports = function (eleventyConfig, options) {
     const html = mathjax.document(content, { InputJax, OutputJax });
     html.render();
 
-    if (isEmpty(html.math)) {
-      return content;
-    }
+    cleanOutput(html, adaptor, options);
 
     return (
       adaptor.doctype(html.document) +
@@ -70,6 +68,27 @@ function createOutputJax(options) {
       return new CHTML(options.chtml);
     default:
       throw new TypeError("Unsupported output format");
+  }
+}
+
+function cleanOutput(html, adaptor, options) {
+  if (isEmpty(html.math)) {
+    switch (options.output) {
+      case "svg": {
+        adaptor.remove(html.outputJax.svgStyles);
+        const globalCache = adaptor.elementById(
+          adaptor.body(html.document),
+          "MJX-SVG-global-cache"
+        );
+        if (globalCache != null) {
+          adaptor.remove(globalCache);
+        }
+        break;
+      }
+      case "chtml":
+        adaptor.remove(html.outputJax.chtmlStyles);
+        break;
+    }
   }
 }
 
