@@ -18,13 +18,15 @@ module.exports = function (eleventyConfig) {
 
 ## Usage
 
-This plugin uses `$...$` and `\(...\)` for inline equations,
-`$$...$$` and `\[...\]` for block equations,
+Use `$...$` or `\(...\)` for inline equations,
+`$$...$$` or `\[...\]` for block equations,
 and `\$` for escaping the dollar sign.
 
 #### Caveat
 
-In Markdown files, `\(`, `\[` and `\$` needs to be written as `\\\(`, `\\\[` and `\\$` respectively. This is due to that the plugin operates on the generated HTML, not directly on the source file.
+In Markdown files, `\(`, `\[` and `\$` needs to be written as `\\\(`, `\\\[` and `\\$` respectively.
+
+This is due to that the plugin operates on the generated HTML, not directly on the source file.
 
 ### Example
 
