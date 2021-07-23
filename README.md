@@ -24,7 +24,7 @@ and `\$` for escaping the dollar sign.
 
 #### Caveat
 
-In Markdown files, `\(`, `\[` and `\$` needs to be written as `\\\(`, `\\\[` and `\\$` respectively.
+In Markdown files, `\(`, `\[` and `\$` need to be written as `\\\(`, `\\\[` and `\\$` respectively.
 This is due to that the plugin operates on the generated HTML, not directly on the source file.
 Symbolic latex commands, such as `\_` `\,` `\{` `\<`, also need to be escaped.
 
@@ -50,6 +50,7 @@ This is a \( \TeX \) example.
 </p>
 
 This is a dollar sign \\$.
+
 <p>This is also a dollar sign \$.</p>
 ```
 
