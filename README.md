@@ -25,8 +25,11 @@ and `\$` for escaping the dollar sign.
 #### Caveat
 
 In Markdown files, `\(`, `\[` and `\$` needs to be written as `\\\(`, `\\\[` and `\\$` respectively.
-
 This is due to that the plugin operates on the generated HTML, not directly on the source file.
+Symbolic latex commands, such as `\_` `\,` `\{` `\<`, also need to be escaped.
+
+Alternatively, wrapping the latex code inside a html tag will stop the Markdown engine from processing the text,
+eliminating the need for extra escaping.
 
 ### Example
 
@@ -39,7 +42,15 @@ Equivalent to:
 This is a \\\( \TeX \\\) example.
 \\\[ 1 + 1 = 2 \\\]
 
+Alternatively, write
+
+<p>
+This is a \( \TeX \) example.
+\[ 1 + 1 = 2 \]
+</p>
+
 This is a dollar sign \\$.
+<p>This is also a dollar sign \$.</p>
 ```
 
 ## Options
