@@ -18,15 +18,17 @@ module.exports = function (eleventyConfig) {
 
 ## Usage
 
-Use `$...$` or `\(...\)` for inline equations,
-`$$...$$` or `\[...\]` for block equations,
+Use `$...$` for inline equations, `$$...$$` for block equations,
 and `\$` for escaping the dollar sign.
+
+MathJax-style `\(...\)` and `\[...\]` are also supported,
+but see below for caveat.
 
 #### Caveat
 
 In Markdown files, `\(`, `\[` and `\$` need to be written as `\\\(`, `\\\[` and `\\$` respectively.
 This is due to that the plugin operates on the generated HTML, not directly on the source file.
-Symbolic latex commands, such as `\_` `\,` `\{` `\<`, also need to be escaped.
+Latex commands which start with a symbol (e.g. `\_`, `\,`, `\{`, `\<`) also need to be escaped.
 
 Alternatively, wrapping the latex code inside a html tag will stop the Markdown engine from processing the text,
 eliminating the need for extra escaping.
