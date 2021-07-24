@@ -24,7 +24,7 @@ and `\$` for escaping the dollar sign.
 MathJax-style `\(...\)` and `\[...\]` are also supported,
 but see below for caveat.
 
-#### Caveat
+### Caveat
 
 In Markdown files, `\(`, `\[` and `\$` need to be written as `\\\(`, `\\\[` and `\\$` respectively.
 This is due to that the plugin operates on the generated HTML, not directly on the source file.
