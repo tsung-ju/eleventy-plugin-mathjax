@@ -72,6 +72,8 @@ eleventyConfig.addPlugin(mathjaxPlugin, {
 });
 ```
 
+### Supported Fields
+
 #### output
 
 Output format for math equations. Supports `"svg"` and `"chtml"`. Defaults to `"svg"`.
