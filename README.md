@@ -5,7 +5,7 @@ Eleventy plugin for server-side MathJax rendering.
 ## Installation
 
 ```sh
-npm install eleventy-plugin-mathjax
+npm install eleventy-plugin-mathjax --save-dev
 ```
 
 ```js
