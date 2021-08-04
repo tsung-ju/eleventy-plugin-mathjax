@@ -23,6 +23,9 @@
     "url": "https://github.com/tsung-ju/eleventy-plugin-mathjax/issues"
   },
   "homepage": "https://github.com/tsung-ju/eleventy-plugin-mathjax#readme",
+  "peerDependencies": {
+    "@11ty/eleventy": "^0.3.3"
+  },
   "dependencies": {
     "mathjax-full": "^3.2.0"
   }
