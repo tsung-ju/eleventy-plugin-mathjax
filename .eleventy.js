@@ -24,7 +24,7 @@ const defaultOptions = {
   liteAdaptor: {},
 };
 
-module.exports = function (eleventyConfig, options) {
+module.exports = function (eleventyConfig, options = {}) {
   options = {
     ...defaultOptions,
     ...options,
