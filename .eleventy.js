@@ -7,6 +7,7 @@ const { RegisterHTMLHandler } = require("mathjax-full/js/handlers/html.js");
 const { AssistiveMmlHandler } = require("mathjax-full/js/a11y/assistive-mml.js");
 
 const { AllPackages } = require("mathjax-full/js/input/tex/AllPackages.js");
+require('mathjax-full/js/util/entities/all.js');
 
 const defaultOptions = {
   output: "svg",
