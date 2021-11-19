@@ -1,6 +1,6 @@
 {
   "name": "eleventy-plugin-mathjax",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Eleventy plugin for server-side MathJax rendering",
   "main": ".eleventy.js",
   "scripts": {
