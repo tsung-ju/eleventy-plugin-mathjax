@@ -1,3 +1,4 @@
+const pkg = require("./package.json");
 const { mathjax } = require("mathjax-full/js/mathjax.js");
 const { TeX } = require("mathjax-full/js/input/tex.js");
 const { SVG } = require("mathjax-full/js/output/svg.js");
@@ -7,7 +8,7 @@ const { RegisterHTMLHandler } = require("mathjax-full/js/handlers/html.js");
 const { AssistiveMmlHandler } = require("mathjax-full/js/a11y/assistive-mml.js");
 
 const { AllPackages } = require("mathjax-full/js/input/tex/AllPackages.js");
-require('mathjax-full/js/util/entities/all.js');
+require("mathjax-full/js/util/entities/all.js");
 
 const defaultOptions = {
   output: "svg",
@@ -26,6 +27,12 @@ const defaultOptions = {
 };
 
 module.exports = function (eleventyConfig, options = {}) {
+  try {
+    eleventyConfig.versionCheck(pkg["11ty"].compatibility);
+  } catch (e) {
+    console.log(`WARN: Eleventy Plugin (${pkg.name}) Compatibility: ${e.message}`);
+  }
+
   options = {
     ...defaultOptions,
     ...options,
@@ -53,10 +60,7 @@ module.exports = function (eleventyConfig, options = {}) {
     cleanOutput(html, adaptor, options);
 
     return (
-      adaptor.doctype(html.document) +
-      "\n" +
-      adaptor.outerHTML(adaptor.root(html.document)) +
-      "\n"
+      adaptor.doctype(html.document) + "\n" + adaptor.outerHTML(adaptor.root(html.document)) + "\n"
     );
   });
 };
